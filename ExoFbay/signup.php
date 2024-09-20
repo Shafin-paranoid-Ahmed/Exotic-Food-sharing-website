@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->query(query: $sql);
             header("Location: index.html");
         }
-
     } else {
         echo "Error: " . $conn->error;
     }
