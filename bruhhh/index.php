@@ -3,12 +3,13 @@
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head class="head">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="css/home-style.css" />
+    <link id="stylesheet" rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
     <style>
       nav .dropdown button {
@@ -64,22 +65,24 @@
           <h2 class="nav_logo"><a href="index.php">FoodBay</a></h2>
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
+            <button id="mode-toggle">Switch to Dark Mode</button>
+            <li>
+              <div class="dropdown">
+                <button>USER</button>
+                <div class="content">
+                  <a href="#"><?php echo $_SESSION['user_name'];?></a>
+                  <a href="#"><?php echo $_SESSION['email'];?></a>
+                  <a href="login_signup.html">LOGOUT</a>
+                </div>
+              </div>
+            </li>
             <li><a href="index.php" class="nav_link">Home</a></li>
             <li><a href="food_list.html" class="nav_link">FoodList</a></li>
             <li><a href="bid_board.php" class="nav_link">bid_board</a></li>
             <li><a href="about_us.html" class="nav_link">About Us</a></li>
             <li><a href="Cart.html" class="nav_link">Cart</a></li>
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
-            <li>
-              <div class="dropdown">
-                <button>User</button>
-                <div class="content">
-                  <a href="#"><?php echo $_SESSION['user_name'];?></a>
-                  <a href="#"><?php echo $_SESSION['email'];?></a>
-                  <a href="logout.php">LOGOUT</a>
-                </div>
-              </div>
-            </li>
+            
           </ul>
           <img src="images/bars.svg" alt="timesicon" id="menu_toggle" />
         </nav>
@@ -114,5 +117,24 @@
         toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
       });
     </script>
+
+    <script>
+        const button = document.getElementById('mode-toggle');
+        const stylesheet = document.getElementById('stylesheet');
+
+        const currentMode = localStorage.getItem('mode') || 'light';
+        stylesheet.setAttribute('href', currentMode === 'light' ? 'css/home-style.css' : 'css/home-style-dark.css');
+        button.textContent = currentMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+
+        button.addEventListener('click', () => {
+            const currentMode = localStorage.getItem('mode') || 'light';
+            const newMode = currentMode === 'light' ? 'dark' : 'light';
+            stylesheet.setAttribute('href', newMode === 'light' ? 'css/home-style.css' : 'css/home-style-dark.css');
+            localStorage.setItem('mode', newMode);
+            button.textContent = newMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+        });
+    </script>
+
+
   </body>
 </html>
