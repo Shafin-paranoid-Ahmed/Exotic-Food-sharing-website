@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query(query: $sql) === TRUE) {
 
-        include "user_id.php";
+        header("Location: login_signup.html");
 
     } else {
         echo "Error: " . $conn->error;
