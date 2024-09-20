@@ -1,17 +1,53 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 
-
 <!DOCTYPE html>
+<!-- Coding by CodingNepal || www.codingnepalweb.com -->
 <html lang="en">
   <head class="head">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link id="stylesheet" rel="stylesheet" href="css/home-style.css" />
+    <title>Simple Responsive Website in HTML CSS</title>
+    <link id="stylesheet"rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
     <style>
+      body {
+          font-family: "Poppins", sans-serif;
+      }
+      h1{
+          text-align: center;
+      }
+      table {
+          width: 50%;
+          height: 100%;
+          margin: auto;
+          border-collapse: collapse;
+      }
+  
+      th, td {
+          border: 2px solid #141414; 
+          padding: 8px;
+          text-align: left;
+      }
+  
+      th {
+          background-color: #f2cdd0;
+      }
+      a {
+          color: #ffffff;
+          text-decoration: none;
+      }
+  
+      a:hover {
+          text-decoration: underline;
+      }
+      main {
+        height: 100%;
+        width:100%;
+      }
+
+      
       nav .dropdown button {
         background-color: #fff;
         border: 2px solid #7d2ae8;
@@ -54,8 +90,9 @@
       nav .dropdown:hover .content {
         display: block;
       }
-    </style>
-
+    
+      
+    </style>  
   </head>
   <body>
     <main>
@@ -63,6 +100,7 @@
       <header>
         <nav class="nav container">
           <h2 class="nav_logo"><a href="index.php">FoodBay</a></h2>
+
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
             <button id="mode-toggle">Switch to Dark Mode</button>
@@ -82,34 +120,68 @@
             <li><a href="about_us.html" class="nav_link">About Us</a></li>
             <li><a href="Cart.html" class="nav_link">Cart</a></li>
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
-            
           </ul>
           <img src="images/bars.svg" alt="timesicon" id="menu_toggle" />
         </nav>
-
       </header>
       <!-- Header End -->
-      <!-- Hero Start -->
-      <section class="hero">
-        <div class="row container">
-          <div class="column">
-            <h2><big>FoodBay</big><br/><small>Bid on your favourite food and win great deals!</small></h2>
-            <p>Our website allows you to win great deals by bidding on discounted items from our curated items list, provided by trusted overseas suppliers, our selection of dry food is always fresh, exotic and affordable!</p>
-            <div class="buttons">
-              <a href="food_list.php"><button class="btn">Check out our Food List</button></a>
-              
-              <a href="bid_board.php"><button class="btn">Bid on a featured food item now!</button></a>
+      <section>
+        <!-- <section class="food_section layout_padding"> -->
+          <!-- <div class="container"> -->
+            <!-- <div class="heading_container heading_center"> -->
+          <div>
+            <div>
+              <h2>
+                Food Listings
+                <br>
+                <br>
+              </h2>
             </div>
+            <table>
+              <thead>
+                  <tr>
+                      <th style="color: black;">Name</th>
+                      <th style="color: black;">Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td><a href="df/Pizza.html" target="_blank">Pizza</a></td>
+                      <td>Tk.400</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/Burger.html" target="_blank">Burger</a></td>
+                      <td>Tk.270</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/pasta.html" target="_blank">Pasta</a></td>
+                      <td>Tk.180</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/FriedRice.html" target="_blank">Fried Rice</a></td>
+                      <td>Tk.220</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/FriedChicken.html" target="_blank">Fried Chicken</a></td>
+                      <td>Tk.150</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/Sandwich.html" target="_blank">Sandwich</a></td>
+                      <td>Tk.60</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/Lasagna.html" target="_blank">Lasagna</a></td>
+                      <td>Tk.230</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/PotatoWedges.html" target="_blank">Potato Wedges</a></td>
+                      <td>Tk.140</td>
+                  </tr>
+              </tbody>    
+            </table>
+      
           </div>
-          <!-- <div class="column">
-            <img src="images/hero.png" alt="heroImg" class="hero_img" />
-          </div> -->
-        </div>
-        <!-- <img src="images/bg-bottom-hero.png" alt="" class="curveImg" /> -->
-      </section>
-      <!-- Hero End-->
-    </main>
-
+        </section>
     <script>
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
@@ -135,7 +207,5 @@
             button.textContent = newMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
         });
     </script>
-
-
   </body>
 </html>
