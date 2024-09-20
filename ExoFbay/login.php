@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $flagsql = "SELECT flag from user";
     $flagresult = $conn->query($flagsql);
-    $flagrow = mysqli_fetch_assoc($result);
+    $flagrow = mysqli_fetch_assoc($flagrowresult);
     $flag = $flagrow["flag"];
     if ($flag == 1){
         $sql = "SELECT u.user_id as user_id, u.email, u.password, c.customer_id, FROM user u, customer c WHERE email = '$email' AND password = '$password' and c.user_id = u.user_id";
