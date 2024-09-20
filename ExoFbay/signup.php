@@ -14,22 +14,37 @@ if ($conn->connect_error) {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $user_id = NULL;
+    $email = $_POST['email'];
     $username = $_POST['uname'];
     $userpassword = $_POST['upassword'];
-    $flag = 1;
     $building = $_POST['building'];
     $road = $_POST['road'];
     $area = $_POST['area'];
     $city = $_POST['city'];
+    $Supplier = $_POST['supplier'];
+    if($Supplier == "Syes"){
+        $flag = 0;
+        $coo = $_POST['origin'];
+        
+    }   else{
+        $flag = 1;
+        
+    }
+    
     $sql1 = "INSERT INTO user (user_id, email,name, password, flag, building, road, area, city) VALUES ('$user_id','$username', '$userpassword', '$flag','$building','$road','$area','$city')";
 
 
-
     if ($conn->query(query: $sql) === TRUE) {
+        $_SESSION["user_id"] = $row['user_id'];
+        $_SESSION["email"] = $email;
+        if($flag == 0){
+            $sql = "INSERT INTO supplier (supplier_id, country_of_origin, user_id) 
+            VALUES ('$coo','$user_id')";
 
-        include "user_id.php";
-
+        }
+        header("Location: index.html");
     } else {
         echo "Error: " . $conn->error;
     }
