@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = NULL;
+    $email = $_POST['email'];
     $username = $_POST['uname'];
     $userpassword = $_POST['upassword'];
     $flag = 1;
@@ -27,8 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if ($conn->query(query: $sql) === TRUE) {
-
-        header("Location: login_signup.html");
+        $_SESSION["user_id"] = $row['user_id'];
+        $_SESSION["customer_id"] = $row['customer_id'];
+        $_SESSION["email"] = $email;
+        header("Location: index.html");
 
     } else {
         echo "Error: " . $conn->error;
