@@ -73,11 +73,11 @@
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
             <li>
               <div class="dropdown">
-                <button>User</button>
+                <button>USER</button>
                 <div class="content">
                   <a href="#"><?php echo $_SESSION['user_name'];?></a>
                   <a href="#"><?php echo $_SESSION['email'];?></a>
-                  <a href="login_signup.html">LOGOUT<?php session_destroy() ?></a>
+                  <a href="login_signup.html">LOGOUT</a>
                 </div>
               </div>
             </li>
