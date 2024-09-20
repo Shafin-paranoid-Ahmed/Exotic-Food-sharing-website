@@ -1,5 +1,7 @@
 
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,8 +15,53 @@
     <title>Simple Responsive Website in HTML CSS</title>
     <link rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
+    <style>
+      nav .dropdown button {
+        background-color: #fff;
+        border: 2px solid #7d2ae8;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #7d2ae8;
+        cursor: pointer;
+        font-size: 12px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+  
+      nav .dropdown button:hover {
+        background-color: #7d2ae8;
+        color: #fff;
+      }
+  
+      nav .dropdown .content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        border-radius: 5px;
+        padding: 10px 0;
+      }
+  
+      nav .dropdown .content a {
+        color: #333;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+      }
+  
+      nav .dropdown .content a:hover {
+        background-color: #7d2ae8;
+        color: #fff;
+      }
+  
+      nav .dropdown:hover .content {
+        display: block;
+      }
+    </style>
+
 </head>
-<body>\
+<body>
     <main>
     <header>
         <nav class="nav container">
@@ -27,6 +74,16 @@
             <li><a href="about_us.html" class="nav_link">About Us</a></li>
             <li><a href="Cart.html" class="nav_link">Cart</a></li>
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
+            <li>
+              <div class="dropdown">
+                <button>User</button>
+                <div class="content">
+                  <a href="#"><?php echo $_SESSION['user_name'];?></a>
+                  <a href="#"><?php echo $_SESSION['email'];?></a>
+                  <a href="logout.php">LOGOUT</a>
+                </div>
+              </div>
+            </li>
           </ul>
           <img src="images/bars.svg" alt="timesicon" id="menu_toggle" />
         </nav>
@@ -95,6 +152,14 @@
         </section>
     </main>
     <script src="script.js"></script>
+        <script>
+      const header = document.querySelector("header");
+      const menuToggler = document.querySelectorAll("#menu_toggle");
+
+      menuToggler.forEach(toggler => {
+        toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
+      });
+    </script>
 </body>
 </html>
 

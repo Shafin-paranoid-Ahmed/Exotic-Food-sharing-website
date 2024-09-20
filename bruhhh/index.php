@@ -76,7 +76,7 @@
                 <div class="content">
                   <a href="#"><?php echo $_SESSION['user_name'];?></a>
                   <a href="#"><?php echo $_SESSION['email'];?></a>
-                  <a href="login_signup.html">LOGOUT<?php session_destroy() ?></a>
+                  <a href="logout.php">LOGOUT</a>
                 </div>
               </div>
             </li>
