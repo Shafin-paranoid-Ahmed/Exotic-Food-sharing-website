@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     if ($conn->query(query: $sql) === TRUE) {
         $conn->close();
-        header("Location: pg_bidboard.php");
+        header("Location: bid_board.php");
     } else {
         echo "Error updating bid: " . $conn->error;
     }

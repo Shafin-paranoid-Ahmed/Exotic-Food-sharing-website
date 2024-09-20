@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["user_id"] = $row['user_id'];
         $_SESSION["customer_id"] = $row['customer_id'];
         $_SESSION["email"] = $email;
-        header("Location: index.php");
+        header("Location: index.html");
         $conn->close();
     } else {
-        header("Location: message.html");
+        header("Location: login_signup.html");
         $conn->close();
     }
 }
