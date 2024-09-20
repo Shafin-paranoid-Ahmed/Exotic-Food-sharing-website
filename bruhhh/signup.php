@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_id = $row2['user_id'];
         $_SESSION["user_id"] = $row2['user_id'];
         $_SESSION["email"] = $email;
+        $_SESSION["user_name"] = $username;
         if($flag == 2){
             $sql = "INSERT INTO supplier (supplier_id, country_of_origin, user_id) 
             VALUES (NULL, '$coo','$user_id')";
@@ -51,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO customer(customer_id, user_id) 
             VALUES (NULL,'$user_id')";
             $conn->query(query: $sql);
-            header("Location: index.html");
+            header("Location: index.php");
         }
 
     } else {
