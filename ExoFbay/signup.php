@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Supplier = $_POST['supplier'];
     if($Supplier == "Syes"){
         $flag = 0;
+        $coo = $_POST['origin'];
         
     }   else{
         $flag = 1;
@@ -37,11 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query(query: $sql) === TRUE) {
         $_SESSION["user_id"] = $row['user_id'];
-        $_SESSION["customer_id"] = $row['customer_id'];
         $_SESSION["email"] = $email;
+        if($flag == 0){
+            $sql = "INSERT INTO supplier (supplier_id, country_of_origin, user_id) 
+            VALUES ('$coo','$user_id')";
+
+        }
         header("Location: index.html");
-
-
     } else {
         echo "Error: " . $conn->error;
     }
