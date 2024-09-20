@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: index.html");
         }
 
-
     } else {
         echo "Error: " . $conn->error;
     }
