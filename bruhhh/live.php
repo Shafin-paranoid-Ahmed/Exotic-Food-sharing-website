@@ -2,7 +2,7 @@
 <html>
 
 <?php
-session_start();
+
 $conn= mysqli_connect("localhost", "root", "", "foodbay");
 $sql = "Select upload_time from bid_board";
 $result = $conn->query($sql);
