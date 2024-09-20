@@ -9,7 +9,7 @@
   <head class="head">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="css/home-style.css" />
+    <link id="stylesheet" rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
     <style>
       nav .dropdown button {
@@ -118,22 +118,21 @@
       });
     </script>
 
-    <script>// Get references to the button and the stylesheet
-      const button = document.getElementById('mode-toggle');
-      const stylesheet = document.getElementById('stylesheet');
+    <script>
+        const button = document.getElementById('mode-toggle');
+        const stylesheet = document.getElementById('stylesheet');
 
-      // Check localStorage for saved mode preference
-      const currentMode = localStorage.getItem('mode') || 'light';
-      stylesheet.setAttribute('href', currentMode === 'light' ? 'home-style.css' : 'home-style-dark.css');
-      button.textContent = currentMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+        const currentMode = localStorage.getItem('mode') || 'light';
+        stylesheet.setAttribute('href', currentMode === 'light' ? 'css/home-style.css' : 'css/home-style-dark.css');
+        button.textContent = currentMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
 
-      // Add click event listener to the button
-      button.addEventListener('click', () => {
-          const newMode = currentMode === 'light' ? 'dark' : 'light';
-          stylesheet.setAttribute('href', newMode === 'light' ? 'home-style.css' : 'home-style-dark.css');
-          localStorage.setItem('mode', newMode);
-          button.textContent = newMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
-      });
+        button.addEventListener('click', () => {
+            const currentMode = localStorage.getItem('mode') || 'light';
+            const newMode = currentMode === 'light' ? 'dark' : 'light';
+            stylesheet.setAttribute('href', newMode === 'light' ? 'css/home-style.css' : 'css/home-style-dark.css');
+            localStorage.setItem('mode', newMode);
+            button.textContent = newMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+        });
     </script>
 
 
