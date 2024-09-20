@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $_SESSION["user_id"] = $row['user_id'];
             $_SESSION['user_name'] = $row['username'];
+
             $_SESSION["customer_id"] = $row['customer_id'];
             $_SESSION["email"] = $email;
             header("Location: index.php");
