@@ -17,7 +17,7 @@ head {
 main {
   background: #1a0d3b; /* Darker main background */
   height: max-content;
-  width: max-content;
+  width:100%;
 }
 
 .container {

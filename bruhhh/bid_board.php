@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ?>
@@ -58,6 +59,11 @@ session_start();
       nav .dropdown:hover .content {
         display: block;
       }
+
+      main {
+        height: max-content;
+        width:max-content;
+      }
     </style>
 
 </head>
@@ -69,13 +75,18 @@ session_start();
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
             <button id="mode-toggle">Switch to Dark Mode</button>
+																		   
+																		   
+																		  
+																  
+																		   
             <li>
               <div class="dropdown">
                 <button>USER</button>
                 <div class="content">
                   <a href="#"><?php echo $_SESSION['user_name'];?></a>
                   <a href="#"><?php echo $_SESSION['email'];?></a>
-                  <a href="login_signup.html">LOGOUT</a>
+                  <a href="logout.php">LOGOUT</a>
                 </div>
               </div>
             </li>
