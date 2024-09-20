@@ -93,18 +93,18 @@
       <section class="hero">
         <div class="row container">
           <div class="column">
-            <h2>Top free tool and extension to <br />radiply grow you business</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, architecto? Consectetur enim obcaecati velit quibusdam iure, perspiciatis accusantium, voluptatibus possimus cum voluptates dolorum optio ab vitae. Praesentium voluptas quia voluptates at aperiam aliquid vitae autem!</p>
+            <h2><big>FoodBay</big><br/><small>Bid on your favourite food and win great deals!</small></h2>
+            <p>Our website allows you to win great deals by bidding on discounted items from our curated items list, provided by trusted overseas suppliers, our selection of dry food is always fresh, exotic and affordable!</p>
             <div class="buttons">
               <button class="btn">Read More</button>
               <button class="btn">Contact Us</button>
             </div>
           </div>
-          <div class="column">
+          <!-- <div class="column">
             <img src="images/hero.png" alt="heroImg" class="hero_img" />
-          </div>
+          </div> -->
         </div>
-        <img src="images/bg-bottom-hero.png" alt="" class="curveImg" />
+        <!-- <img src="images/bg-bottom-hero.png" alt="" class="curveImg" /> -->
       </section>
       <!-- Hero End-->
     </main>
