@@ -36,8 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["supplier_id"] = $row['supplier_id'];
             $_SESSION["email"] = $email;
             header("Location: supplier.html");
-            $conn->close()
-}
+            $conn->close();
+            
+    }
     }
 
 }
