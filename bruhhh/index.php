@@ -65,7 +65,7 @@
           <h2 class="nav_logo"><a href="index.php">FoodBay</a></h2>
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
-            <button id="mode-toggle">Dark//Light</button>
+            <button id="mode-toggle">Switch to Dark Mode</button>
             <li>
               <div class="dropdown">
                 <button>USER</button>
@@ -117,5 +117,25 @@
         toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
       });
     </script>
+
+    <script>// Get references to the button and the stylesheet
+      const button = document.getElementById('mode-toggle');
+      const stylesheet = document.getElementById('stylesheet');
+
+      // Check localStorage for saved mode preference
+      const currentMode = localStorage.getItem('mode') || 'light';
+      stylesheet.setAttribute('href', currentMode === 'light' ? 'home-style.css' : 'home-style-dark.css');
+      button.textContent = currentMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+
+      // Add click event listener to the button
+      button.addEventListener('click', () => {
+          const newMode = currentMode === 'light' ? 'dark' : 'light';
+          stylesheet.setAttribute('href', newMode === 'light' ? 'home-style.css' : 'home-style-dark.css');
+          localStorage.setItem('mode', newMode);
+          button.textContent = newMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+      });
+    </script>
+
+
   </body>
 </html>
