@@ -12,12 +12,12 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $flagsql = "SELECT flag from user";
+    $flagsql = "SELECT flag from user where email= '$email' and password = '$password'";
     $flagresult = $conn->query($flagsql);
-    $flagrow = mysqli_fetch_assoc($flagrowresult);
+    $flagrow = mysqli_fetch_assoc($flagresult);
     $flag = $flagrow["flag"];
     if ($flag == 1){
-        $sql = "SELECT u.user_id as user_id, u.email, u.password, c.customer_id, FROM user u, customer c WHERE email = '$email' AND password = '$password' and c.user_id = u.user_id";
+        $sql = "SELECT u.user_id as user_id, u.email, u.password, c.customer_id FROM user u, customer c WHERE email = '$email' AND password = '$password' and c.user_id = u.user_id";
         $result = $conn->query(query: $sql);
         $row = mysqli_fetch_assoc($result);
         if ($result->num_rows > 0) {
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->close();
         } 
     }   else if ($flag == 2){
-        $sql = "SELECT u.user_id as user_id, u.email, u.password, s.supplier_id, FROM user u, supplier s WHERE email = '$email' AND password = '$password' and s.user_id = u.user_id";
+        $sql = "SELECT u.user_id as user_id, u.email, u.password, s.supplier_id FROM user u, supplier s WHERE email = '$email' AND password = '$password' and s.user_id = u.user_id";
         $result = $conn->query(query: $sql);
         $row = mysqli_fetch_assoc($result);
         if ($result->num_rows > 0) {
