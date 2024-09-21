@@ -92,8 +92,8 @@
             <h2>Top free tool and extension to <br />radiply grow you business</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, architecto? Consectetur enim obcaecati velit quibusdam iure, perspiciatis accusantium, voluptatibus possimus cum voluptates dolorum optio ab vitae. Praesentium voluptas quia voluptates at aperiam aliquid vitae autem!</p>
             <div class="buttons">
-              <button class="btn">Read More</button>
-              <button class="btn">Contact Us</button>
+              <button class="btn" href="Supplier Upload.php">Upload</button>
+              <button class="btn" href = "food_list">View Item list</button>
             </div>
           </div>
           <div class="column">
