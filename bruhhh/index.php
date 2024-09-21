@@ -72,12 +72,12 @@
                 <div class="content">
                   <a href="#"><?php echo $_SESSION['user_name'];?></a>
                   <a href="#"><?php echo $_SESSION['email'];?></a>
-                  <a href="logout.php">LOGOUT</a>
+                  <a href="login_signup.html">LOGOUT</a>
                 </div>
               </div>
             </li>
             <li><a href="index.php" class="nav_link">Home</a></li>
-            <li><a href="food_list.php" class="nav_link">FoodList</a></li>
+            <li><a href="food_list.html" class="nav_link">FoodList</a></li>
             <li><a href="bid_board.php" class="nav_link">bid_board</a></li>
             <li><a href="about_us.html" class="nav_link">About Us</a></li>
             <li><a href="Cart.html" class="nav_link">Cart</a></li>
@@ -96,9 +96,8 @@
             <h2><big>FoodBay</big><br/><small>Bid on your favourite food and win great deals!</small></h2>
             <p>Our website allows you to win great deals by bidding on discounted items from our curated items list, provided by trusted overseas suppliers, our selection of dry food is always fresh, exotic and affordable!</p>
             <div class="buttons">
-              <a href="food_list.php"><button class="btn">Check out our Food List</button></a>
-              
-              <a href="bid_board.php"><button class="btn">Bid on a featured food item now!</button></a>
+              <button class="btn">Read More</button>
+              <button class="btn">Contact Us</button>
             </div>
           </div>
           <!-- <div class="column">
