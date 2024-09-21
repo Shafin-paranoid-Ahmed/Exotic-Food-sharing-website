@@ -2,15 +2,14 @@
     session_start();
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head class="head">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link id="stylesheet" rel="stylesheet" href="css/home-style.css" />
-    <script src="../custom-scripts.js" defer></script>
+  <link rel="stylesheet" href="css/home-style.css" />
+    <link rel="stylesheet" href="css/logstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       nav .dropdown button {
         background-color: #fff;
