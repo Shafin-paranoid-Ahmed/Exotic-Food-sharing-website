@@ -118,5 +118,22 @@
         toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
       });
     </script>
+
+    <script>
+        const button = document.getElementById('mode-toggle');
+        const stylesheet = document.getElementById('stylesheet');
+
+        const currentMode = localStorage.getItem('mode') || 'light';
+        stylesheet.setAttribute('href', currentMode === 'light' ? 'css/home-style.css' : 'css/home-style-dark.css');
+        button.textContent = currentMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+
+        button.addEventListener('click', () => {
+            const currentMode = localStorage.getItem('mode') || 'light';
+            const newMode = currentMode === 'light' ? 'dark' : 'light';
+            stylesheet.setAttribute('href', newMode === 'light' ? 'css/home-style.css' : 'css/home-style-dark.css');
+            localStorage.setItem('mode', newMode);
+            button.textContent = newMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+        });
+    </script>
   </body>
 </html>
