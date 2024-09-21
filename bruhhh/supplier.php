@@ -1,14 +1,16 @@
+<?php
+    session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <php>
-
-  </php>
   <head class="head">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="css/home-style.css" />
+    <title></title>
+    <link id="stylesheet" rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
-
     <style>
       nav .dropdown button {
         background-color: #fff;
@@ -56,34 +58,37 @@
 
   </head>
   <body>
-
     <main>
-
-
       <!-- Header Start -->
       <header>
         <nav class="nav container">
           <h2 class="nav_logo"><a href="index.php">FoodBay</a></h2>
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
-            <li><a href="index.php" class="nav_link">Home</a></li>
-            <li><a href="supplierFlist.php" class="nav_link">Item List</a></li>
-            <li><a href="login_signup.html" class="nav_link">Login</a></li>
+            <button id="mode-toggle">Switch to Dark Mode</button>
             <li>
               <div class="dropdown">
-                <button>User</button>
+                <button>USER</button>
                 <div class="content">
-                  <a href="#">Name: </a>
-                  <a href="#">Email:</a>
-                  <a href="login_signup.html">Logout</a>
+                  <a href="#"><?php echo $_SESSION['user_name'];?></a>
+                  <a href="#"><?php echo $_SESSION['email'];?></a>
+                  <a href="logout.php">LOGOUT</a>
                 </div>
               </div>
             </li>
+            <li><a href="index.php" class="nav_link">Home</a></li>
+            <li><a href="food_list.php" class="nav_link">FoodList</a></li>
+            <li><a href="bid_board.php" class="nav_link">bid_board</a></li>
+            <li><a href="about_us.html" class="nav_link">About Us</a></li>
+            <li><a href="Cart.html" class="nav_link">Cart</a></li>
+            <li><a href="login_signup.html" class="nav_link">Login</a></li>
+            
           </ul>
           <img src="images/bars.svg" alt="timesicon" id="menu_toggle" />
         </nav>
 
       </header>
+      <!-- Header End -->
       <!-- Header End -->
       <!-- Hero Start -->
       <section class="hero">
