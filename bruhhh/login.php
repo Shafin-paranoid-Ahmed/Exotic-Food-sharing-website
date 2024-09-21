@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
         if ($result->num_rows > 0) {
             $_SESSION["user_id"] = $row['user_id'];
+            $_SESSION['user_name'] = $row['username'];
             $_SESSION["supplier_id"] = $row['supplier_id'];
             $_SESSION["email"] = $email;
             header("Location: supplier.php");
