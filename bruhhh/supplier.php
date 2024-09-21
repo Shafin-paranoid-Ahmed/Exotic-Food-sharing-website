@@ -96,9 +96,9 @@
             <h2>Top free tool and extension to <br />radiply grow you business</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, architecto? Consectetur enim obcaecati velit quibusdam iure, perspiciatis accusantium, voluptatibus possimus cum voluptates dolorum optio ab vitae. Praesentium voluptas quia voluptates at aperiam aliquid vitae autem!</p>
             <div class="buttons">
-              <button class="btn" href="Supplier_Upload.php">Upload</button>
-              <button class="btn" href = "supplierFlist.php">View Item list</button>
-            </div>
+              <a href="Upload.php"><button class="btn">Upload</button></a>
+              
+              <a href="supplierFlist.php"><button class="btn">Items List</button></a>
           </div>
           <!-- <div class="column">
             <img src="images/hero.png" alt="heroImg" class="hero_img" />
