@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $item_name = $_POST['iname'];
     $quantity = $_POST['quantity'];
     $item_price = $_POST['price'];
-    $image = $_FILES['image']['name'];
+    $item_image = $_FILES['image']['name'];
 
     $description = $_POST['description'];
     $item_rating = $_POST['rating'];
