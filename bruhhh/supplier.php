@@ -62,7 +62,7 @@
       <!-- Header Start -->
       <header>
         <nav class="nav container">
-          <h2 class="nav_logo"><a href="index.php">FoodBay</a></h2>
+          <h2 class="nav_logo"><a href="supplier.php">FoodBay</a></h2>
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
             <button id="mode-toggle">Switch to Dark Mode</button>
@@ -76,11 +76,11 @@
                 </div>
               </div>
             </li>
-            <li><a href="index.php" class="nav_link">Home</a></li>
+            <li><a href="supplier.php" class="nav_link">Home</a></li>
             <li><a href="food_list.php" class="nav_link">FoodList</a></li>
-            <li><a href="bid_board.php" class="nav_link">bid_board</a></li>
-            <li><a href="about_us.html" class="nav_link">About Us</a></li>
-            <li><a href="Cart.html" class="nav_link">Cart</a></li>
+            <!-- <li><a href="bid_board.php" class="nav_link">bid_board</a></li> -->
+            <!-- <li><a href="about_us.html" class="nav_link">About Us</a></li> -->
+            <!-- <li><a href="Cart.html" class="nav_link">Cart</a></li> -->
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
             
           </ul>
@@ -89,7 +89,6 @@
 
       </header>
       <!-- Header End -->
-      <!-- Header End -->
       <!-- Hero Start -->
       <section class="hero">
         <div class="row container">
@@ -97,8 +96,8 @@
             <h2>Top free tool and extension to <br />radiply grow you business</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, architecto? Consectetur enim obcaecati velit quibusdam iure, perspiciatis accusantium, voluptatibus possimus cum voluptates dolorum optio ab vitae. Praesentium voluptas quia voluptates at aperiam aliquid vitae autem!</p>
             <div class="buttons">
-              <button class="btn" href="Supplier Upload.php">Upload</button>
-              <button class="btn" href = "food_list">View Item list</button>
+              <button class="btn" href="Supplier_Upload.php">Upload</button>
+              <button class="btn" href = "food_list.php">View Item list</button>
             </div>
           </div>
           <div class="column">

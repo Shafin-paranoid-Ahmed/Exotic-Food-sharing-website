@@ -150,7 +150,7 @@
               </div>
 
               <div class="input-box">
-                <input type="text" name="image" placeholder="Enter your image" >
+                <input type="file" name="image" placeholder="Enter your image" >
               </div>
 
               <div class="input-box">
