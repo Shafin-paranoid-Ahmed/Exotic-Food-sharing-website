@@ -67,7 +67,7 @@
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
             <li><a href="index.html" class="nav_link">Home</a></li>
-            <li><a href="food_list.html" class="nav_link">Item List</a></li>
+            <li><a href="supplierFlist.php" class="nav_link">Item List</a></li>
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
             <li>
               <div class="dropdown">

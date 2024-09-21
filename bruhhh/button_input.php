@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // $row1 = mysqli_fetch_array($result1);
     // $user_id= $row1['user_id'];
     // $customer_id = $row1['customer_id'];
-    if ($bid > 0) {
+    if ($bid >= 0) {
         if ($action == 'addBid') {
             $sql = "UPDATE bid_board SET bid_price = bid_price + $bid, user_id = '$user_id',customer_id = '$customer_id'";
         }
@@ -29,6 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error updating bid: " . $conn->error;
     }
 }
-
-
 ?>
