@@ -97,7 +97,7 @@
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, architecto? Consectetur enim obcaecati velit quibusdam iure, perspiciatis accusantium, voluptatibus possimus cum voluptates dolorum optio ab vitae. Praesentium voluptas quia voluptates at aperiam aliquid vitae autem!</p>
             <div class="buttons">
               <button class="btn" href="Supplier_Upload.php">Upload</button>
-              <button class="btn" href = "food_list.php">View Item list</button>
+              <button class="btn" href = "supplierFlist.php">View Item list</button>
             </div>
           </div>
           <!-- <div class="column">
