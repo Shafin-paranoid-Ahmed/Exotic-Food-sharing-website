@@ -1,12 +1,16 @@
+<?php
+    session_start();
+?>
+
+
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title> Login and Registration Form in HTML & CSS | CodingLab </title>
-    <link rel="stylesheet" href="css/home-style.css" />
-    <link rel="stylesheet" href="css/logstyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head class="head">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link id="stylesheet" rel="stylesheet" href="css/home-style.css" />
+    <script src="../custom-scripts.js" defer></script>
     <style>
       nav .dropdown button {
         background-color: #fff;
@@ -74,9 +78,9 @@
             </li>
             <li><a href="index.php" class="nav_link">Home</a></li>
             <li><a href="food_list.php" class="nav_link">FoodList</a></li>
-            <!-- <li><a href="bid_board.php" class="nav_link">bid_board</a></li> -->
-            <!-- <li><a href="about_us.html" class="nav_link">About Us</a></li> -->
-            <!-- <li><a href="Cart.html" class="nav_link">Cart</a></li> -->
+            <li><a href="bid_board.php" class="nav_link">bid_board</a></li>
+            <li><a href="about_us.html" class="nav_link">About Us</a></li>
+            <li><a href="Cart.html" class="nav_link">Cart</a></li>
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
             
           </ul>
