@@ -100,11 +100,11 @@
               <button class="btn" href = "food_list.php">View Item list</button>
             </div>
           </div>
-          <div class="column">
+          <!-- <div class="column">
             <img src="images/hero.png" alt="heroImg" class="hero_img" />
-          </div>
+          </div> -->
         </div>
-        <img src="images/bg-bottom-hero.png" alt="" class="curveImg" />
+        <!-- <img src="images/bg-bottom-hero.png" alt="" class="curveImg" /> -->
       </section>
       <!-- Hero End-->
     </main>
