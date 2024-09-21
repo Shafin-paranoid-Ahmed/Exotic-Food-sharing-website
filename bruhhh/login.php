@@ -30,14 +30,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->close();
         } 
     }   else if ($flag == 2){
-        $sql = "SELECT u.user_id as user_id, u.email, u.password, s.supplier_id FROM user u, supplier s WHERE email = '$email' AND password = '$password' and s.user_id = u.user_id";
+        $sql = "SELECT u.user_id as user_id, u.email, u.password, s.supplier_id, u.name as username FROM user u, supplier s WHERE email = '$email' AND password = '$password' and s.user_id = u.user_id";
         $result = $conn->query(query: $sql);
         $row = mysqli_fetch_assoc($result);
         if ($result->num_rows > 0) {
             $_SESSION["user_id"] = $row['user_id'];
+            $_SESSION['user_name'] = $row['username'];
             $_SESSION["supplier_id"] = $row['supplier_id'];
             $_SESSION["email"] = $email;
-            header("Location: supplier.html");
+            header("Location: supplier.php");
             $conn->close();
             
     }

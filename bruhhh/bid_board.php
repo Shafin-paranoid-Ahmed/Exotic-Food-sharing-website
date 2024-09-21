@@ -10,7 +10,6 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Convert | Export html Table to CSV & EXCEL File</title>
     <link rel="stylesheet" type="text/css" href="css/bidboard.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Responsive Website in HTML CSS</title>
@@ -91,7 +90,7 @@ session_start();
               </div>
             </li>
             <li><a href="index.php" class="nav_link">Home</a></li>
-            <li><a href="food_list.html" class="nav_link">FoodList</a></li>
+            <li><a href="food_list.php" class="nav_link">FoodList</a></li>
             <li><a href="bid_board.php" class="nav_link">bid_board</a></li>
             <li><a href="about_us.html" class="nav_link">About Us</a></li>
             <li><a href="Cart.html" class="nav_link">Cart</a></li>
