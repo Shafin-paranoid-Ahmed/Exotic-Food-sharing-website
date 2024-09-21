@@ -63,10 +63,10 @@
       <!-- Header Start -->
       <header>
         <nav class="nav container">
-          <h2 class="nav_logo"><a href="index.html">FoodBay</a></h2>
+          <h2 class="nav_logo"><a href="index.php">FoodBay</a></h2>
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
-            <li><a href="index.html" class="nav_link">Home</a></li>
+            <li><a href="index.php" class="nav_link">Home</a></li>
             <li><a href="supplierFlist.php" class="nav_link">Item List</a></li>
             <li><a href="login_signup.html" class="nav_link">Login</a></li>
             <li>
