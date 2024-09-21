@@ -10,7 +10,7 @@
         die("Connection Failed:". $conn-> connect_error);
     }
 
-    $item_id= isset($_GET['var']);
+    $item_id= isset($_GET['id']);
     echo $item_id;
     
     $sql = "SELECT item_desc, item_image_place, item_name from item where item_id = 8";

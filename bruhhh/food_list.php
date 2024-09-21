@@ -121,7 +121,7 @@ session_start();
                 while($row = $result->fetch_assoc()){
                   $item_id = $row['item_id'];
                   echo "<tr><td>" . $row["item_id"] . 
-                  "</td><td href = 'popup.php'><a href = `popup.php?id = <?php echo urlencode($item_id); ?>`>"
+                  "</td><td><a href = `popup.php?id = <?php echo urlencode($item_id); ?>`>"
                   .$row["item_name"]."</a></td><td>" . 
                   $row["item_rating"] . "</td><td>". $row["price"] ."</td>";
 
