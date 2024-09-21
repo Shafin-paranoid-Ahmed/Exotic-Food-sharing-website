@@ -14,11 +14,16 @@ if ($conn->connect_error) {
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["submit"] == "POST") {
     $item_name = $_POST['iname'];
     $quantity = $_POST['quantity'];
     $item_price = $_POST['price'];
-    $item_image = $_FILES['image']['name'];
+    if (isset($_POST['submit'])) {
+        $file_name = $_FILES['image']['iname'];
+        $tempname = $_FILES['image']['tmp_name'];
+        $folder = 'images/'.$file_name;
+        $query = mysqli_query($conn, "INSERT into item (item_image_place) values ('$file_name')");
+    }
 
     $description = $_POST['description'];
     $item_rating = $_POST['rating'];
