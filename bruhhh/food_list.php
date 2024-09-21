@@ -122,7 +122,7 @@ session_start();
                   $item_id = $row['item_id'];
                   echo "<tr><td>" . $row["item_id"] . 
                   "</td><td><a href = `popup.php?id = <?php echo urlencode($item_id); ?>`>"
-                  .$row["item_name"]."</a></td><td>" . 
+                  .$row["item_name"]."</a></td><td>" .
                   $row["item_rating"] . "</td><td>". $row["price"] ."</td>";
 
                 }
