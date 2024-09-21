@@ -12,36 +12,7 @@ session_start();
     <link id="stylesheet"rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
     <style>
-      body {
-          font-family: "Poppins", sans-serif;
-      }
-      h1{
-          text-align: center;
-      }
-      table {
-          width: 50%;
-          height: 100%;
-          margin: auto;
-          border-collapse: collapse;
-      }
-  
-      th, td {
-          border: 2px solid #141414; 
-          padding: 8px;
-          text-align: left;
-      }
-  
-      th {
-          background-color: #f2cdd0;
-      }
-      a {
-          color: #ffffff;
-          text-decoration: none;
-      }
-  
-      a:hover {
-          text-decoration: underline;
-      }
+
       main {
         height: 100%;
         width:100%;
@@ -126,62 +97,35 @@ session_start();
       </header>
       <!-- Header End -->
       <section>
-        <!-- <section class="food_section layout_padding"> -->
-          <!-- <div class="container"> -->
-            <!-- <div class="heading_container heading_center"> -->
-          <div>
-            <div>
-              <h2>
-                Food Listings
-                <br>
-                <br>
-              </h2>
-            </div>
-            <table>
-              <thead>
-                  <tr>
-                      <th style="color: black;">Name</th>
-                      <th style="color: black;">Price</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td><a href="df/Pizza.html" target="_blank">Pizza</a></td>
-                      <td>Tk.400</td>
-                  </tr>
-                  <tr>
-                      <td><a href="df/Burger.html" target="_blank">Burger</a></td>
-                      <td>Tk.270</td>
-                  </tr>
-                  <tr>
-                      <td><a href="df/pasta.html" target="_blank">Pasta</a></td>
-                      <td>Tk.180</td>
-                  </tr>
-                  <tr>
-                      <td><a href="df/FriedRice.html" target="_blank">Fried Rice</a></td>
-                      <td>Tk.220</td>
-                  </tr>
-                  <tr>
-                      <td><a href="df/FriedChicken.html" target="_blank">Fried Chicken</a></td>
-                      <td>Tk.150</td>
-                  </tr>
-                  <tr>
-                      <td><a href="df/Sandwich.html" target="_blank">Sandwich</a></td>
-                      <td>Tk.60</td>
-                  </tr>
-                  <tr>
-                      <td><a href="df/Lasagna.html" target="_blank">Lasagna</a></td>
-                      <td>Tk.230</td>
-                  </tr>
-                  <tr>
-                      <td><a href="df/PotatoWedges.html" target="_blank">Potato Wedges</a></td>
-                      <td>Tk.140</td>
-                  </tr>
-              </tbody>    
-            </table>
-      
-          </div>
-        </section>
+      <section class= "table__body">
+        <table>
+          <thead>
+            <tr>
+              <th> Item id <span class="icon-arrow">&UpArrow;</span></th>
+              <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+              <th> Rating <span class="icon-arrow">&UpArrow;</span></th>
+              <th> Price <span class="icon-arrow">&UpArrow;</span></th>
+            </tr>
+          <?php
+            $conn = mysqli_connect("localhost", "root", "", "foodbay");
+            if ($conn-> connect_error) {
+                die("Connection Failed:". $conn-> connect_error);
+            }
+            $sql = "SELECT * from item";
+            $result = $conn-> query($sql);
+            if ($result-> num_rows> 0) {
+                while($row = $result->fetch_assoc()){
+                  $item_id = $row['item_id'];
+                  echo "<tr><td>" . $row["item_id"] . 
+                  "</td><td href = 'popup.php'><a href = `popup.php?id = <?php echo urlencode($item_id); ?>`>"
+                  .$row["item_name"]."</a></td><td>" . 
+                  $row["item_rating"] . "</td><td>". $row["price"] ."</td>";
+
+                }
+              }   
+                ?>
+
+      </section>
     <script>
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
