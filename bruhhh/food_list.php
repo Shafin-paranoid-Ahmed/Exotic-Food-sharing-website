@@ -1,15 +1,53 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
 
+
+<!DOCTYPE html>
+<!-- Coding by CodingNepal || www.codingnepalweb.com -->
 <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/bidboard.css">
+  <head class="head">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Responsive Website in HTML CSS</title>
-    <link rel="stylesheet" href="css/home-style.css" />
+    <link id="stylesheet"rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
     <style>
+      body {
+          font-family: "Poppins", sans-serif;
+      }
+      h1{
+          text-align: center;
+      }
+      table {
+          width: 50%;
+          height: 100%;
+          margin: auto;
+          border-collapse: collapse;
+      }
+  
+      th, td {
+          border: 2px solid #141414; 
+          padding: 8px;
+          text-align: left;
+      }
+  
+      th {
+          background-color: #f2cdd0;
+      }
+      a {
+          color: #ffffff;
+          text-decoration: none;
+      }
+  
+      a:hover {
+          text-decoration: underline;
+      }
+      main {
+        height: 100%;
+        width:100%;
+      }
+
+      
       nav .dropdown button {
         background-color: #fff;
         border: 2px solid #7d2ae8;
@@ -52,7 +90,9 @@
       nav .dropdown:hover .content {
         display: block;
       }
-    </style>
+    
+      
+    </style>  
   </head>
   <body>
     <main>
@@ -63,8 +103,19 @@
 
           <ul class="menu_items">
             <img src="images/times.svg" alt="timesicon" id="menu_toggle" />
+            <button id="mode-toggle">Switch to Dark Mode</button>
+            <li>
+              <div class="dropdown">
+                <button>USER</button>
+                <div class="content">
+                  <a href="#"><?php echo $_SESSION['user_name'];?></a>
+                  <a href="#"><?php echo $_SESSION['email'];?></a>
+                  <a href="logout.php">LOGOUT</a>
+                </div>
+              </div>
+            </li>
             <li><a href="index.php" class="nav_link">Home</a></li>
-            <li><a href="food_list.html" class="nav_link">FoodList</a></li>
+            <li><a href="food_list.php" class="nav_link">FoodList</a></li>
             <li><a href="bid_board.php" class="nav_link">bid_board</a></li>
             <li><a href="about_us.html" class="nav_link">About Us</a></li>
             <li><a href="Cart.html" class="nav_link">Cart</a></li>
@@ -74,37 +125,63 @@
         </nav>
       </header>
       <!-- Header End -->
-      <section class= "table__body">
-        <table>
-          <thead>
-            <tr>
-              <th> Item id <span class="icon-arrow">&UpArrow;</span></th>
-              <th> Name <span class="icon-arrow">&UpArrow;</span></th>
-              <th> Rating <span class="icon-arrow">&UpArrow;</span></th>
-              <th> Price <span class="icon-arrow">&UpArrow;</span></th>
-            </tr>
-          <?php
-            $conn = mysqli_connect("localhost", "root", "", "foodbay");
-            if ($conn-> connect_error) {
-                die("Connection Failed:". $conn-> connect_error);
-            }
-            $sql = "SELECT * from item";
-            $result = $conn-> query($sql);
-            if ($result-> num_rows> 0) {
-                while($row = $result->fetch_assoc()){
-                  $item_id = $row['item_id'];
-                  echo "<tr><td>" . $row["item_id"] . 
-                  "</td><td href = 'popup.php'><a href = `popup.php?id = <?php echo urlencode($item_id); ?>`>"
-                  .$row["item_name"]."</a></td><td>" . 
-                  $row["item_rating"] . "</td><td>". $row["price"] ."</td>";
-
-                }
-              }   
-                ?>
-
-      </section>
-
-
+      <section>
+        <!-- <section class="food_section layout_padding"> -->
+          <!-- <div class="container"> -->
+            <!-- <div class="heading_container heading_center"> -->
+          <div>
+            <div>
+              <h2>
+                Food Listings
+                <br>
+                <br>
+              </h2>
+            </div>
+            <table>
+              <thead>
+                  <tr>
+                      <th style="color: black;">Name</th>
+                      <th style="color: black;">Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td><a href="df/Pizza.html" target="_blank">Pizza</a></td>
+                      <td>Tk.400</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/Burger.html" target="_blank">Burger</a></td>
+                      <td>Tk.270</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/pasta.html" target="_blank">Pasta</a></td>
+                      <td>Tk.180</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/FriedRice.html" target="_blank">Fried Rice</a></td>
+                      <td>Tk.220</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/FriedChicken.html" target="_blank">Fried Chicken</a></td>
+                      <td>Tk.150</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/Sandwich.html" target="_blank">Sandwich</a></td>
+                      <td>Tk.60</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/Lasagna.html" target="_blank">Lasagna</a></td>
+                      <td>Tk.230</td>
+                  </tr>
+                  <tr>
+                      <td><a href="df/PotatoWedges.html" target="_blank">Potato Wedges</a></td>
+                      <td>Tk.140</td>
+                  </tr>
+              </tbody>    
+            </table>
+      
+          </div>
+        </section>
     <script>
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
@@ -113,7 +190,8 @@
         toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
       });
     </script>
-        <script>
+
+    <script>
         const button = document.getElementById('mode-toggle');
         const stylesheet = document.getElementById('stylesheet');
 
@@ -129,59 +207,5 @@
             button.textContent = newMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
         });
     </script>
-    <style>
-    .popup .overlay {
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 1;
-        display: none;
-    }
-    .popup .content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        background: #fff;
-        width: 450px;
-        height: 220px;
-        z-index: 2;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-        transition: all 300ms ease-in-out;
-    }
-    .popup .close-btn {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        width: 30px;
-        height: 30px;
-        background: #222;
-        color: #fff;
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 30px;
-        text-align: center;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .popup.active .overlay {
-        display: block;
-    }
-    .popup.active .content {
-        transform: translate(-50%, -50%) scale(1);
-    }
-</style>
-
-<script>
-    function openPopup(item_id) {
-        var popupWindow = window.open("popup.php?id=" + item_id, "Popup", "width=400,height=300");
-        popupWindow.focus();
-    }
-</script>
   </body>
 </html>

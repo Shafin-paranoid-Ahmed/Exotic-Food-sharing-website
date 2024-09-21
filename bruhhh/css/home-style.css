@@ -8,7 +8,7 @@
 }
 
 
-head{
+head {
   background-color: #7d2ae8;
   max-height: max-content;
   max-width: 1900px;
@@ -16,7 +16,7 @@ head{
 main {
   background: #7d2ae8;
   height: max-content;
-  width: max-content;
+  width: 100%;
 }
 .container {
   max-width: 2000px;

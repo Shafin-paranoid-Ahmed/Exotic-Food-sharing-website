@@ -58,6 +58,11 @@ session_start();
       nav .dropdown:hover .content {
         display: block;
       }
+
+      main {
+        height: max-content;
+        width:max-content;
+      }
     </style>
 
 </head>
