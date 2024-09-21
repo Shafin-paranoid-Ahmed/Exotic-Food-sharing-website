@@ -6,10 +6,14 @@ session_start();
 <!DOCTYPE html>
 <!-- Coding by CodingNepal || www.codingnepalweb.com -->
 <html lang="en">
-  <head class="head">
+  <head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bidboard.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Responsive Website in HTML CSS</title>
-    <link id="stylesheet"rel="stylesheet" href="css/home-style.css" />
+    <link id="stylesheet" rel="stylesheet" href="css/home-style.css" />
     <script src="../custom-scripts.js" defer></script>
     <style>
 
